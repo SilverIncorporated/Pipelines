@@ -9,13 +9,6 @@ jobs:
   NET_6_Pipeline:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with: 
-          repository: SilverIncorporated/Pipelines
-          token: ${{ secrets.TOKEN }}
-          path: ./pipelines
-          ref: main
-      - uses: checkout@v3
-      - uses: ./pipelines/BuildNETForUiPath.yaml
+      - uses: SilverIncorporated/BuildNETforUiPath
         with:
           secrets: inherit

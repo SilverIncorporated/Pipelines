@@ -1,6 +1,6 @@
 # This workflow will build a .NET project and upload the built project to a UiPath Tenant
 
-name: .NET 6
+name: .NET 6 for UiPath
 
 on:
   workflow_call:
@@ -24,6 +24,8 @@ jobs:
       packages: write
 
     steps:
+    - name: Checkout current repo
+      uses: actions/checkout@v3
     - name: Setup the .NET Instance
       uses: actions/setup-dotnet@v3
       with:
