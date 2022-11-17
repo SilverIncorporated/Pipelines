@@ -2,14 +2,18 @@ name: CI
 
 on:
   workflow_call:
-    packages: write
+    secrets:
+      USERNAME:
+        required: true
+      GHPACKAGESURL:
+        required: true
+      
 
 jobs:
   build:
     runs-on: ubuntu-latest    
     outputs: 
-      Version: ${{ steps.gitversion.outputs.SemVer }}
-      CommitsSinceVersionSource: ${{ steps.gitversion.outputs.CommitsSinceVersionSource }} 
+      Version: ${{ steps.v.outputs.version }}
 
     steps:
     - uses: actions/checkout@v3
