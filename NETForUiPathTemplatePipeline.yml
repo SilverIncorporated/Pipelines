@@ -8,5 +8,4 @@ on:
 jobs:
   NET_6_Pipeline:
     uses: SilverIncorporated/Pipelines/.github/workflows/BuildNETforUiPath.yml@main
-    with:
-      secrets: inherit
+    secrets: inherit
