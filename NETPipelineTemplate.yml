@@ -7,8 +7,7 @@ on:
 
 jobs:
   NET_6_Pipeline:
-    runs-on: ubuntu-latest
     steps:
-      - uses: SilverIncorporated/BuildNETforUiPath
+      - uses: SilverIncorporated/Pipelines/.github/workflows/BuildNETforUiPath.yml
         with:
           secrets: inherit
