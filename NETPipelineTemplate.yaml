@@ -16,7 +16,6 @@ jobs:
           path: ./pipelines
           ref: main
       - uses: checkout@v3
-      - uses: 
-      - uses: ./pipelines/BuildNET.yaml
+      - uses: ./pipelines/BuildNETForUiPath.yaml
         with:
           secrets: inherit
