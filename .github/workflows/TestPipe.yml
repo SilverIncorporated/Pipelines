@@ -1,6 +1,10 @@
+name: Test
+
 on: 
   workflow_call:
-    secrets: inherit
+    secrets:
+      USERNAME:
+        required: false
 
   jobs:
     build:
