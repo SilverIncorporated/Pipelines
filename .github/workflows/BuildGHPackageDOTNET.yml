@@ -75,9 +75,9 @@ jobs:
     - name: Setup .NET Core @ Latest
       uses: actions/setup-dotnet@v3
       with:
-        source-url: ${{ secrets.GHPACKAGESURL }}
+        source-url: ${{ secrets.MYGET_FEED_PUSH }}
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}   
     - name: Push package to GitHub packages 
-      run: dotnet nuget push ./package/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate --no-symbols true
+      run: dotnet nuget push ./package/*.nupkg --api-key ${{ secrets.MYGET_APIKEY }} --skip-duplicate --no-symbols true
     
