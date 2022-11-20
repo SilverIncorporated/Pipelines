@@ -1,6 +1,6 @@
 on: workflow_call
 
-  job:
+  jobs:
     build:
     runs-on: ubuntu-latest    
     outputs: 
