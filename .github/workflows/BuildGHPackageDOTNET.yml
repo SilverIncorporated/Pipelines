@@ -79,4 +79,4 @@ jobs:
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}   
     - name: Push package to GitHub packages 
-      run: dotnet nuget push ./package/*.nupkg --skip-duplicate --no-symbols true
+      run: dotnet nuget push ./package/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate --no-symbols true
