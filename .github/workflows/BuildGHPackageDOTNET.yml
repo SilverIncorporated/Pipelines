@@ -81,7 +81,10 @@ jobs:
     # - name: Push package to GitHub packages 
     #   run: dotnet nuget push ./package/*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} --skip-duplicate --no-symbols true
     - name: Publish
-     run: |
-      for f in ./package/*.nupkg
-      do 
-        curl -vX PUT -u "${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}" -F package=@$f ${{ secrets.GHPACKAGESURL }} 
+      run: |
+        for f in ./package/*.nupkg
+        do 
+          curl -vX PUT -u "${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}" -F package=@$f ${{ secrets.GHPACKAGESURL }} 
+        done
+      shell: bash
+    
