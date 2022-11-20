@@ -1,8 +1,10 @@
-on:
+name: Test
+
+on: 
   workflow_call
 
-  jobs:
-    build:
+jobs:
+  build:
     runs-on: ubuntu-latest    
     outputs: 
       Version: ${{ steps.v.outputs.version }}
@@ -36,3 +38,6 @@ on:
     - name: Display new version
       run: |
         echo "Version: ${{ steps.v.outputs.version }}"
+
+    - name: Dump Context
+      uses: crazy-max/ghaction-dump-context@v1
