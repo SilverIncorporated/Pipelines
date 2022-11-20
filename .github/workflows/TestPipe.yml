@@ -38,3 +38,6 @@ jobs:
     - name: Display new version
       run: |
         echo "Version: ${{ steps.v.outputs.version }}"
+
+    - name: Dump Context
+      uses: crazy-max/ghaction-dump-context@v1
