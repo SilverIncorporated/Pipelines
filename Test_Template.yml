@@ -1,0 +1,11 @@
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+
+jobs:
+  NET_6_Pipeline:
+    uses: SilverIncorporated/Pipelines/.github/workflows/TestPipe.yml@main
+    secrets: inherit
