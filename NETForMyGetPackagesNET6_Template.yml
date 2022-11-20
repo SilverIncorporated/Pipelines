@@ -7,5 +7,5 @@ on:
 
 jobs:
   NET_6_Pipeline:
-    uses: SilverIncorporated/Pipelines/.github/workflows/BuildGHPackageDOTNET.yml@main
+    uses: SilverIncorporated/Pipelines/.github/workflows/BuildMyGetPackageDOTNET6.yml@main
     secrets: inherit
