@@ -75,6 +75,7 @@ jobs:
     - name: Setup .NET Core @ Latest
       uses: actions/setup-dotnet@v3
       with:
+        dotnet-version: 7.0.x
         source-url: ${{ secrets.GHPACKAGESURL }}
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}   
