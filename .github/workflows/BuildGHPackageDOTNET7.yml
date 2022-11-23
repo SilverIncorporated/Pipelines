@@ -23,7 +23,6 @@ jobs:
       id: v
       uses: paulhatch/semantic-version@v5.0.0-alpha2
       with: 
-        branch: "main"
         # The prefix to use to identify tags
         tag_prefix: "v"
         # A string which, if present in a git commit, indicates that a change represents a
@@ -61,7 +60,6 @@ jobs:
     needs: build
     permissions: 
       packages: write
-    if: github.ref == 'refs/heads/main' # only run job if on the main branch   
     
     steps:  
     #Push NuGet package to GitHub packages
