@@ -47,6 +47,9 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 7.0.x
+        source-url: ${{ secrets.GHPACKAGESURL }}
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}   
     - name: Build and Pack NuGet package
       run: dotnet pack -p:Version='${{ steps.v.outputs.version }}' -c Release
     - name: Upload NuGet package to GitHub
