@@ -3,8 +3,6 @@ name: CI
 on:
   workflow_call:
     secrets:
-      USERNAME:
-        required: true
       GHPACKAGESURL:
         required: true
       
