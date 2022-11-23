@@ -5,6 +5,8 @@ on:
     secrets:
       GHPACKAGESURL:
         required: true
+
+permissions: read-all
       
 
 jobs:
@@ -12,8 +14,6 @@ jobs:
     runs-on: ubuntu-latest    
     outputs: 
       Version: ${{ steps.v.outputs.version }}
-    permissions: 
-      packages: read
 
     steps:
     - uses: actions/checkout@v3
