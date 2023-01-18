@@ -12,5 +12,5 @@ jobs:
 
   NET_7_Deploy_to_UiPath:
     needs: NET_7_Pipeline
-    uses: SilverIncorporated/Pipelines/.github/workflows/AddPackageToUiPath/yml@main
+    uses: SilverIncorporated/Pipelines/.github/workflows/AddPackageToUiPath.yml@main
     secrets: inherit
