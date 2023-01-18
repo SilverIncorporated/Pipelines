@@ -11,8 +11,6 @@ on:
         required: true
       UIPATH_CLIENT_SECRET:
         required: true
-      UIPATH_TENANT:
-        required: true
       UIPATH_SCOPES:
         required: true
 
