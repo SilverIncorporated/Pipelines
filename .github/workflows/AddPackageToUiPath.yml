@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  workflow_call:
+    secrets:
+      UIPATH_AUTHENTICATION_URL:
+        required: true
+      UIPATH_LIBRARY_URL:
+        required: true
+      UIPATH_CLIENT_ID:
+        required: true
+      UIPATH_CLIENT_SECRET:
+        required: true
+      UIPATH_TENANT:
+        required: true
+      UIPATH_SCOPES:
+        required: true
+
+permissions: read-all
+      
+
+jobs:
+  deploy:
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 #fetch-depth is needed for Semantic Version
+
+    - name: Download nuget package artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: nugetPackage
+        path: ./package
+
+    - name: Authenticate to UiPath Tenant
+      id: authReq
+      uses: fjogeleit/http-request-action@v1
+      with:
+        url: ${{ secrets.UIPATH_AUTHENTICATION_URL }}
+        method: 'POST'
+        contentType: 'application/x-www-form-urlencoded'
+        data: '{
+                  "grant_type": "client_credentials",
+                  "client_id": "${{ secrets.UIPATH_CLIENT_ID }}",
+                  "client_secret": "${{ secrets.UIPATH_CLIENT_SECRET }}",
+                  "scope": "${{ secrets.UIPATH_SCOPES }}"
+              }'
+
+    - name: Display Response
+      run: |
+        echo ${{ steps.authReq.outputs.response }}
+        
