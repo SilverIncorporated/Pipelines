@@ -36,7 +36,7 @@ jobs:
       id: authReq
       uses: fjogeleit/http-request-action@v1
       with:
-        url: ${{ secrets.UIPATH_LIBRARY_URL }}
+        url: ${{ secrets.UIPATH_AUTHENTICATION_URL }}
         method: 'POST'
         contentType: 'application/x-www-form-urlencoded'
         data: '{
