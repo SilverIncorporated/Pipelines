@@ -36,7 +36,7 @@ jobs:
       id: authReq
       uses: fjogeleit/http-request-action@v1
       with:
-        url: ${{ secrets.UIPATH_AUTHENTICATION_URL }}
+        url: ${{ secrets.UIPATH_LIBRARY_URL }}
         method: 'POST'
         contentType: 'application/x-www-form-urlencoded'
         data: '{
@@ -46,7 +46,16 @@ jobs:
                   "scope": "${{ secrets.UIPATH_SCOPES }}"
               }'
 
-    - name: Display Response
-      run: |
-        echo ${{ steps.authReq.outputs.response }}
+    # - name: Display Response
+    #   run: |
+    #     echo ${{ steps.authReq.outputs.response }}
+
+    - name: Post Library Package to Tenant
+      id: authReq
+      uses: fjogeleit/http-request-action@v1
+      with:
+          url: '${{ secrets.UIPATH_LIBRARY_URL }}'
+          method: 'POST'
+          data: '{ "key": "value" }'
+          files: '{ "file": "./package/*.nupkg" }'
         
