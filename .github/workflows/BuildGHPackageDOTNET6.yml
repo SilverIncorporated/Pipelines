@@ -23,7 +23,7 @@ jobs:
     #Install and calculate the new version with GitVersion  
     - name: Determine Version Number
       id: v
-      uses: paulhatch/semantic-version@v5.0.0-alpha2
+      uses: paulhatch/semantic-version@v5.0.3
       with: 
         # The prefix to use to identify tags
         tag_prefix: "v"
