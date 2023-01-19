@@ -51,7 +51,6 @@ jobs:
     #     echo ${{ steps.authReq.outputs.response }}
 
     - name: Post Library Package to Tenant
-      id: authReq
       uses: fjogeleit/http-request-action@v1
       with:
           url: '${{ secrets.UIPATH_LIBRARY_URL }}'
