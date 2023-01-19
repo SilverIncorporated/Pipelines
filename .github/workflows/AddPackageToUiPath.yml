@@ -2,9 +2,6 @@ name: CI
 
 on:
   workflow_call:
-    inputs: 
-      packageName:
-        required: true
     secrets:
       UIPATH_AUTHENTICATION_URL:
         required: true
