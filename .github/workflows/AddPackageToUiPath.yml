@@ -56,6 +56,5 @@ jobs:
           url: '${{ secrets.UIPATH_LIBRARY_URL }}'
           bearerToken: fromJson( ${{ steps.authReq.outputs.response }} ).access_token
           method: 'POST'
-          data: '{ "key": "value" }'
           files: '{ "file": "./package/*.nupkg" }'
         
