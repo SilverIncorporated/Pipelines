@@ -137,11 +137,11 @@ jobs:
     #     echo ${{ steps.authReq.outputs.response }}
 
     - name: Fetch action
-        id: pl
-        uses: Rishabh510/Path-lister-action@master
-        with:
-          path: "./package"
-          type: ".nupkg"
+      id: pl
+      uses: Rishabh510/Path-lister-action@master
+      with:
+        path: "./package"
+        type: ".nupkg"
 
     - name: List Files
       run: |
