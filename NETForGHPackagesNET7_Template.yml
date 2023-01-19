@@ -14,3 +14,6 @@ jobs:
     needs: NET_7_Pipeline
     uses: SilverIncorporated/Pipelines/.github/workflows/AddPackageToUiPath.yml@main
     secrets: inherit
+    with:
+      packageName: 
+
